@@ -1,0 +1,112 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    font-family: "Roboto", "Noto Sans Thai", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #333;
+    background-color: #1a1a1a;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(45deg, #ff6600, #cc4400) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Buttons */
+.btn-secondary {
+    background-color: #ff6600 !important;
+    border-color: #ff6600 !important;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #e65c00 !important;
+    border-color: #cc5200 !important;
+    transform: scale(1.05);
+}
+
+.btn-outline-success {
+    color: #ff6600 !important;
+    border-color: #ff6600 !important;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-success:hover {
+    background-color: #ff6600 !important;
+    color: #ffffff !important;
+    border-color: #ff6600 !important;
+    transform: scale(1.05);
+}
+
+/* Carousel */
+.carousel {
+    margin-bottom: 4rem;
+}
+
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-item {
+    height: 32rem;
+    background-color: #262626;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Featurette */
+.featurette-divider {
+    margin: 5rem 0;
+    border-top: 2px solid #ff6600;
+    opacity: 0.8;
+}
+
+.featurette-heading {
+    letter-spacing: -.05rem;
+    color: #ff6600;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+@media (min-width: 40em) {
+    .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 62em) {
+    .featurette-heading {
+        margin-top: 7rem;
+    }
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+</style>
