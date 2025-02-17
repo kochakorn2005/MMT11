@@ -25,34 +25,98 @@
         rel="stylesheet">
     
     <style>
+        /* Global Styles */
+        body {
+            background-color: #f4f7f6; /* Soft background color */
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+
+        h1 {
+            font-family: 'Noto Sans Thai', sans-serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: 50px;
+            color: #333;
+        }
+
         /* Custom Style for Images */
         .image-frame {
             border: 5px solid #ddd; /* Light gray border for the image frame */
             padding: 10px;
-            margin: 10px;
+            margin: 20px;
             border-radius: 8px; /* Rounded corners for a smooth look */
             text-align: center;
+            transition: all 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        .image-frame:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+            transform: translateY(-5px); /* Lift image frame on hover */
         }
         
         .image-frame img {
             max-width: 100%; /* Ensure images scale with screen size */
             height: auto;
             border-radius: 8px;
+            transition: transform 0.3s ease;
         }
-        
+
+        .image-frame img:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+
         .image-label {
             margin-top: 10px;
             font-size: 1.2rem;
             font-weight: bold;
             color: #333;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
         }
-        
+
         .image-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            margin-top: 40px;
         }
 
+        .image-container .image-frame {
+            width: 300px;
+            margin-bottom: 30px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .image-container {
+                display: block;
+            }
+
+            .image-container .image-frame {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Navbar styling (if included) */
+        .navbar {
+            background-color: #e15a00; /* Orange background for navbar */
+        }
+
+        .navbar-brand {
+            font-family: 'Noto Sans Thai', sans-serif;
+            font-size: 1.8rem;
+            color: #fff;
+        }
+
+        .nav-link {
+            color: #fff;
+        }
+
+        .nav-link:hover {
+            color: #ffd700; /* Hover effect color */
+        }
     </style>
 </head>
 
