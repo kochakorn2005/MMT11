@@ -1,220 +1,224 @@
-<!doctype html>
-<html lang="en" data-bs-theme="auto">
+<style>
+  /* Global Styles */
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap');
+  
+  body {
+    font-family: "Lora", serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: rgb(var(--bs-tertiary-color-rgb));
+    background: #f9f9f9;
+  }
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.122.0">
-    <title>MMT</title>
+  /* Enhance Buttons */
+  .btn {
+    border-radius: 30px; /* Rounded corners for buttons */
+    transition: all 0.3s ease-in-out;
+  }
 
-    <!-- Bootstrap -->
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  .btn:hover {
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
 
-    <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
+  .btn-primary {
+    background-color: #e15a00;
+    border-color: #e15a00;
+    transition: all 0.3s ease-in-out;
+  }
 
-    <!-- Custom Font styles  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Roboto:wght@100..900&display=swap"
-        rel="stylesheet">
-    
-    <style>
-        /* Global Styles */
-        body {
-            background-color: #f4f7f6; /* Soft background color */
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-        }
+  .btn-primary:hover {
+    background-color: #d14c00; /* Slightly darker orange */
+    border-color: #d14c00;
+  }
 
-        h1 {
-            font-family: 'Noto Sans Thai', sans-serif;
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-top: 50px;
-            color: #333;
-        }
+  .btn-outline-success {
+    color: #e15a00;
+    border-color: #e15a00;
+    transition: all 0.3s ease-in-out;
+  }
 
-        /* Custom Style for Images */
-        .image-frame {
-            border: 5px solid #ddd; /* Light gray border for the image frame */
-            padding: 10px;
-            margin: 20px;
-            border-radius: 8px; /* Rounded corners for a smooth look */
-            text-align: center;
-            transition: all 0.3s ease; /* Smooth transition for hover effect */
-        }
+  .btn-outline-success:hover {
+    background-color: #e15a00;
+    color: #ffffff;
+    border-color: #e15a00;
+  }
 
-        .image-frame:hover {
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
-            transform: translateY(-5px); /* Lift image frame on hover */
-        }
-        
-        .image-frame img {
-            max-width: 100%; /* Ensure images scale with screen size */
-            height: auto;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
+  /* Carousel Enhancements */
+  .carousel {
+    margin-bottom: 4rem;
+  }
 
-        .image-frame img:hover {
-            transform: scale(1.05); /* Slight zoom effect on hover */
-        }
+  .carousel-item {
+    height: 32rem;
+    transition: transform 0.5s ease;
+  }
 
-        .image-label {
-            margin-top: 10px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #333;
-            text-transform: uppercase;
-            letter-spacing: 0.05rem;
-        }
+  .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
 
-        .image-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 40px;
-        }
+  .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  }
 
-        .image-container .image-frame {
-            width: 300px;
-            margin-bottom: 30px;
-        }
+  .carousel-caption p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
 
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .image-container {
-                display: block;
-            }
+  /* Marketing Content */
+  .marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
 
-            .image-container .image-frame {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-        }
+  .marketing .col-lg-4:hover {
+    transform: translateY(-10px); /* Hover effect to raise marketing items */
+  }
 
-        /* Navbar styling (if included) */
-        .navbar {
-            background-color: #e15a00; /* Orange background for navbar */
-        }
+  /* Featurettes */
+  .featurette-divider {
+    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  }
 
-        .navbar-brand {
-            font-family: 'Noto Sans Thai', sans-serif;
-            font-size: 1.8rem;
-            color: #fff;
-        }
+  .featurette-heading {
+    letter-spacing: -.05rem;
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e15a00;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
 
-        .nav-link {
-            color: #fff;
-        }
+  .featurette-heading:hover {
+    color: #d14c00; /* Slight color change on hover */
+  }
 
-        .nav-link:hover {
-            color: #ffd700; /* Hover effect color */
-        }
-    </style>
-</head>
+  /* Responsive Styles */
+  @media (min-width: 40em) {
+    .carousel-caption p {
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
 
-<body>
-    <div id="navbar-placeholder"></div>
+    .featurette-heading {
+      font-size: 50px;
+    }
+  }
 
-    <!-- Heading -->
-    <h1 class="text-center">มุมคนเก่ง</h1>
+  @media (min-width: 62em) {
+    .featurette-heading {
+      margin-top: 7rem;
+    }
+  }
 
-    <!-- Image Gallery Section -->
-    <div class="image-container">
-        <!-- Image 1 -->
-        <div class="image-frame">
-            <img src="smart1.jpg" alt="Smart Image 1">
-            <div class="image-label">รูปภาพที่ 1</div>
-        </div>
-        <!-- Image 2 -->
-        <div class="image-frame">
-            <img src="smart2.jpg" alt="Smart Image 2">
-            <div class="image-label">รูปภาพที่ 2</div>
-        </div>
-        <!-- Image 3 -->
-        <div class="image-frame">
-            <img src="smart3.jpg" alt="Smart Image 3">
-            <div class="image-label">รูปภาพที่ 3</div>
-        </div>
-        <!-- Image 4 -->
-        <div class="image-frame">
-            <img src="smart4.jpg" alt="Smart Image 4">
-            <div class="image-label">รูปภาพที่ 4</div>
-        </div>
-        <!-- Image 5 -->
-        <div class="image-frame">
-            <img src="smart5.jpg" alt="Smart Image 5">
-            <div class="image-label">รูปภาพที่ 5</div>
-        </div>
-        <!-- Image 6 -->
-        <div class="image-frame">
-            <img src="smart6.jpg" alt="Smart Image 6">
-            <div class="image-label">รูปภาพที่ 6</div>
-        </div>
-        <!-- Image 7 -->
-        <div class="image-frame">
-            <img src="smart7.jpg" alt="Smart Image 7">
-            <div class="image-label">รูปภาพที่ 7</div>
-        </div>
-        <!-- Image 8 -->
-        <div class="image-frame">
-            <img src="smart8.jpg" alt="Smart Image 8">
-            <div class="image-label">รูปภาพที่ 8</div>
-        </div>
-        <!-- Image 9 -->
-        <div class="image-frame">
-            <img src="smart9.jpg" alt="Smart Image 9">
-            <div class="image-label">รูปภาพที่ 9</div>
-        </div>
-        <!-- Image 10 -->
-        <div class="image-frame">
-            <img src="smart10.jpg" alt="Smart Image 10">
-            <div class="image-label">รูปภาพที่ 10</div>
-        </div>
-        <!-- Image 11 -->
-        <div class="image-frame">
-            <img src="smart11.jpg" alt="Smart Image 11">
-            <div class="image-label">รูปภาพที่ 11</div>
-        </div>
-        <!-- Image 12 -->
-        <div class="image-frame">
-            <img src="smart12.jpg" alt="Smart Image 12">
-            <div class="image-label">รูปภาพที่ 12</div>
-        </div>
-    </div>
+  /* Additional Elements Adjustments */
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
 
-    <script>
-        // Load Navbar from navbar.html
-        fetch('navbar.html')
-            .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
 
-                // Check current URL and set active class for corresponding link
-                const navLinks = document.querySelectorAll('.nav-link');
-                const currentPath = window.location.pathname.split('/').pop();
+  .b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
 
-                navLinks.forEach(link => {
-                    const linkPath = link.getAttribute('href');
-                    if (linkPath === currentPath) {
-                        link.classList.add('active'); // Add active class to the current link
-                    } else {
-                        link.classList.remove('active'); // Remove active class from other links
-                    }
-                });
-            })
-            .catch(error => console.error('Error loading navbar:', error));
-    </script>
-</body>
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
 
-</html>
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Navbar Styling */
+  body,
+  #navbar-placeholder {
+    font-family: 'Playfair Display', serif, 'Lora', sans-serif;
+  }
+
+  .navbar {
+    background-color: #e15a00 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-brand:hover {
+    color: #ffd700;
+  }
+
+  .nav-link {
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #ffd700;
+  }
+
+  /* Dark Mode Button */
+  .bd-mode-toggle {
+    z-index: 1500;
+  }
+
+  .bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+  }
+
+  .navbar .nav-link.active {
+    color: #ffd700 !important;
+    font-weight: bold;
+  }
+</style>
