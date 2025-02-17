@@ -1,15 +1,14 @@
-/* GLOBAL STYLES
-
+/* GLOBAL STYLES */
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap');
 </style>
 
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
 body {
-  font-family: "Roboto", serif;
-  font-weight: 500;
+  font-family: "Lora", serif;
+  font-weight: 400;
   font-style: normal;
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -35,7 +34,6 @@ body {
   height: 32rem;
 }
 
-
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
@@ -44,13 +42,6 @@ body {
   margin-bottom: 1.5rem;
   text-align: center;
 }
-/* rtl:begin:ignore */
-.marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
-}
-/* rtl:end:ignore */
-
 
 /* Featurettes
 ------------------------- */
@@ -60,12 +51,12 @@ body {
 }
 
 /* Thin out the marketing headings */
-/* rtl:begin:remove */
 .featurette-heading {
   letter-spacing: -.05rem;
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 700;
 }
-
-/* rtl:end:remove */
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
@@ -89,9 +80,7 @@ body {
   }
 }
 
-
-/* เอามาจาก html */
-
+/* Additional elements adjustments */
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -165,7 +154,6 @@ body {
   z-index: 1500;
 }
 
-
 .bd-mode-toggle .dropdown-menu .active .bi {
   display: block !important;
 }
@@ -182,7 +170,7 @@ body {
 
 body,
 #navbar-placeholde {
-    font-family: 'Noto Sans Thai', 'Roboto', sans-serif;
+  font-family: 'Playfair Display', serif, 'Lora', sans-serif;
 }
 
 .navbar {
